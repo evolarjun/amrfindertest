@@ -1,0 +1,5 @@
+#!/bin/sh
+
+docker build --no-cache -t evolarjun/amrfindertest ubuntu_test 
+docker run evolarjun/amrfindertest
+
