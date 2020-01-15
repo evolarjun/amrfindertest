@@ -60,6 +60,5 @@ cd $release
 
 cd ..
 # if we got here we succeeded so delete the test directory
-#rm -r $release
-# test bioconda release?
+rm -r $release
 exit 0

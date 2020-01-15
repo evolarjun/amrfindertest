@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+echo 1..3
 
 # get https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh
 curl -s -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh && \
@@ -21,14 +23,14 @@ conda install -y -c bioconda ncbi-amrfinderplus
          -O https://raw.githubusercontent.com/ncbi/amr/master/test_prot.expected
 
 
-    ./amrfinder -u
-    ./amrfinder --plus -p test_prot.fa -g test_prot.gff -O Escherichia > test_prot.got
+    amrfinder -u
+    amrfinder --plus -p test_prot.fa -g test_prot.gff -O Escherichia > test_prot.got
     diff test_prot.expected test_prot.got
     echo "ok 1 nucleotide test"
-    ./amrfinder --plus -n test_dna.fa -O Escherichia > test_dna.got
+    amrfinder --plus -n test_dna.fa -O Escherichia > test_dna.got
     diff test_dna.expected test_dna.got
     echo "ok 2 protein tests"
-    ./amrfinder --plus -n test_dna.fa -p test_prot.fa -g test_prot.gff -O Escherichia > test_both.got
+    amrfinder --plus -n test_dna.fa -p test_prot.fa -g test_prot.gff -O Escherichia > test_both.got
     diff test_both.expected test_both.got
     echo "ok 3 combined test"
 
