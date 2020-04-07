@@ -2,6 +2,9 @@ name: Do Something That Needs Scheduled
 on:
   schedule:
     - cron:  '*/15 * * * *'
+  push:
+      branches:
+          - master
 jobs:
   build:
     name: Run Some Scheduled Thing
