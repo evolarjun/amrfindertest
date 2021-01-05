@@ -12,3 +12,4 @@ several OSs possible in docker containers.
     docker build -t evolarjun/amrfindertest .
     docker run -it evolarjun/amrfindertest sh run_tests.sh
 
+I used github actions to create a MacOS and Ubuntu bioconda tests as well as tests of the binary and compilation under ubuntu. I think those are sufficient for regression purposes
